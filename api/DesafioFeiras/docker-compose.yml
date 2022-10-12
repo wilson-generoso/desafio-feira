@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  immongo:
+    image: mongo
+  
+  inmetrics.desafio.lancamento.api:
+    image: ${DOCKER_REGISTRY-}inmetricsdesafiolancamentoapi
+    build:
+      context: .
+      dockerfile: inmetrics.desafio.lancamento.api/Dockerfile
