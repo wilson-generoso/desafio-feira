@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace desafio.feiras.infrastructure.mongodb.Feira
 {
@@ -23,7 +25,12 @@ namespace desafio.feiras.infrastructure.mongodb.Feira
         }
 
         public Task Delete(int id) => this.repository.Delete(id);
-        
+
+        public Task<bool> Exists(int id)
+        {
+            return this.repository.Exists(id);
+        }
+
         public async Task<domain.Feira> Get(int id)
         {
             var document = await this.repository.Get(id);
@@ -33,6 +40,27 @@ namespace desafio.feiras.infrastructure.mongodb.Feira
         public async Task<IEnumerable<domain.Feira>> GetAll()
         {
             var documents = await this.repository.GetAll();
+            return documents.Select(doc => mapper.Map<domain.Feira>(doc));
+        }
+
+        public async Task<IEnumerable<domain.Feira>> SearchForFeiras(string distritoMunicipal, string regiaoMunicipio5Areas, string nome, string bairro)
+        {
+            var query = this.repository.AsQueryable();
+
+            if (!string.IsNullOrEmpty(distritoMunicipal))
+                query = query.Where(f => f.DistritoMunicipal == distritoMunicipal);
+
+            if (!string.IsNullOrEmpty(regiaoMunicipio5Areas))
+                query = query.Where(f => f.RegiaoMunicipio5Areas == regiaoMunicipio5Areas);
+
+            if(!string.IsNullOrEmpty(nome))
+                query = query.Where(f => f.Nome.Contains(nome));
+
+            if(!string.IsNullOrEmpty(bairro))
+                query = query.Where(f => f.Nome.Contains(bairro));
+
+            var documents = await query.ToListAsync();
+
             return documents.Select(doc => mapper.Map<domain.Feira>(doc));
         }
 

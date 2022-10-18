@@ -2,12 +2,14 @@
 using MediatR;
 using System.Reflection;
 using desafio.feiras.application.Validation;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// Objeto de extensão para configuração da camada de aplicação
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public static class ApplicationExtension
     {
         /// <summary>

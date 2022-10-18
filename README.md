@@ -1,114 +1,30 @@
-# desafio-inmetrics
+# desafio-feiras
 
-Neste repositório se encontra o código de solução do desafio proposto pela InMetrics, conforme os seguites requisitos:
+## Proposta
+Desenvolver uma API que exponha os dados disponíveis em [1] utilizando uma
+abordagem orientada arecursos e que atenda os requisitos listados abaixo.
 
-## Solução
-Um comerciante precisa controlar o seu fluxo de caixa diário com os lançamentos (débitos e créditos), também precisa de um relatório que disponibilize o saldo diário consolidado.
+### Escopo
+Utilizando os dados do arquivo [DEINFO_AB_FEIRASLIVRES_2014.csv](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/chamadas/feiras_livres_1429113213.zip), implemente:
+- cadastro de uma nova feira;
+- exclusão de uma feira através de seu código de registro;
+- alteração dos campos cadastrados de uma feira, exceto seu código de registro;
+- busca de feiras utilizando ao menos um dos parâmetros abaixo:
+-- distrito
+-- regiao5
+-- nome_feira
+-- bairro
 
-## Requisitos de negócio
-- Serviço que faça o controle dos lançamentos
-- Serviço do consolidado diário
-
-## Requisitos técnicos
-- Desenho da solução
-- Pode ser feito na linguagem que você domina
-- Boas práticas são bem vindas (Design Patterns, Padrões de arquitetura, SOLID, etc)
-- Readme com instruções de como subir a aplicação local, container e utilização dos serviços
-- Hospedar em repositório público (GitHub)
-
-#### Modelo de negócio
-A solução desenvolvida se resume a duas APIs REST para registro de conta e lançamentos.
-Foi idealizado a necessidade da existência de uma conta na qual são registrados os lançamentos e todo o controle de saldo diário.
-
-- A conta possui um nome e seu saldo
-- Os lançamentos são registrados com uma descrição, valor, data e tipo (débito ou crédito)
-
-#### Solução técnica
-A tecnologia utilizada na solução foi AspNetCore WebApi (MVC pattern) em DotNet 6, em modelo de microserviço em container, com alguns objetos largamente utilizados no mercado a saber:
-- Swagger
-- Mediator
-- FluentValidator
-- ApiVersion
-- AutoMapper
-
-Como solução de persistência foi utilizado banco de dados MongoDB.
-
-Foi adotado Clean Architecture como padrão arquitetural, nas camadas:
-- **WebApi**: camada responsável por expor as APIs REST)
-- **Application**: camada de aplicação modelada utilizando-se do Pattern Mediator CQRS (Command Query Responsability Segregation), que por sua vez contribui fortemente na utilização dos padrões SOLID
-- **Domain**: camada com as entidades básicas da solução
-- **Infrastructure**: camada de abstração para serviços de infraestrutura
-- **Infrastructure MongoDB**: camada de infraestrutura com os repositórios de acesso ao MongoDB
-
-Foram utilizados alguns design patterns, a saber:
-- Abstract Factory
-- Dependency Injection
-- Decorator
-- Singleton
-- Adapter
-- Composite
-- Mediator
-- Command
-- Async/Await
-
-### Instruções para subir a aplicação local
-
-#### Pré-requisitos
-
-Para o funcionamento da aplicação é necessário a instalação dos seguintes pré-requisitos:
-
-1. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. [Dotnet 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-
-
-#### Subindo o ambiente
-
-1. Clone o repositório do "Desafio Lançamentos" executando a instrução:
-	git clone https://github.com/wilson-generoso/desafio-inmetrics.git
-
-2. Entre na pasta api/DesafioLancamentos (no contexto da pasta clonada):
-	cd api/DesafioLancementos
-
-3. Execute a seguinte instrução para inicializar a aplicação:
-	docker-compose -f "docker-compose.yml" -f "docker-compose.override.yml" --ansi never up --build --remove-orphans
-
-4. Abra a url da [documentação da API](https://localhost:8091/swagger)
-
-5. Consuma a API para atender ao requisitos do desafio (você pode utilizar a tela de documentação se desejar):
-***Os comandos abaixo são exemplos executados em console***
-
-- Crie uma conta através do endpoint [POST]/api/v1/Account
-	curl --location --request POST 'https://localhost:8091/api/v1/Account' \
-	--header 'Content-Type: application/json' \
-	--data-raw '{
-	  "name": "Teste",
-	  "balance": 20.91
-	}'
-
-- Copie o "id" da conta criada, retornado na resposta, e registre um lançamento de crédito
-	curl --location --request POST 'https://localhost:8091/api/v1/Entry' \
-	--header 'Content-Type: application/json' \
-	--data-raw '{
-	  "accountId": "{substitua aqui com o 'id' da conta}",
-	  "description": "Primeiro lançamento",
-	  "date": "2022-10-10",
-	  "value": 10,
-	  "type": 2
-	}'	
-	
-- Consulte o saldo da conta
-	curl --location --request GET 'https://localhost:8091/api/v1/Account/{adicione aqui o 'id' da conta}'
-
-- Registre novo lançamento de débito
-	curl --location --request POST 'https://localhost:8091/api/v1/Entry' \
-	--header 'Content-Type: application/json' \
-	--data-raw '{
-	  "accountId": "76702b95-7c07-470e-a1fb-33e711a557b6",
-	  "description": "Registro debito",
-	  "date": "2022-10-10",
-	  "value": 15.37,
-	  "type": 1
-	}'
-
-- Consulte o extrato consolidado das operações da conta
-	curl --location --request GET 'https://localhost:8091/api/v1/Entry/{adicione aqui o 'id' da conta}'
+### Requisitos
+Utilize git ou hg para fazer o controle de versão da solução do teste e hospede-a
+no Github ou Bitbucket; não utilize o nome da empresa, em pacotes, arquivos ou no nome do
+repositório.
+- Armazene os dados fornecidos pela Prefeitura de São Paulo em um banco de dados que você julgarapropriado; 
+- A solução deve conter um script para importar os dados do arquivo DEINFO_AB_FEIRASLIVRES_2014.csv para o banco de dados; 
+- A API deve seguir os conceitos REST;
+- O Content-Type das respostas da API deve ser application/json;
+- O código da solução deve conter testes e algum mecanismo documentado para gerar a informação de cobertura dos testes;
+- A aplicação deve gravar logs estruturados em arquivos texto;
+- A solução desta avaliação deve estar documentada em português ou inglês. Escolha um idioma em que você seja fluente;
+- A documentação da solução do teste deve incluir como rodar o projeto;
+- e exemplos de requisições e suas possíveis respostas;

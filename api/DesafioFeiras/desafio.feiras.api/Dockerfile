@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["inmetrics.desafio.lancamento.api/inmetrics.desafio.lancamento.api.csproj", "inmetrics.desafio.lancamento.api/"]
-RUN dotnet restore "inmetrics.desafio.lancamento.api/inmetrics.desafio.lancamento.api.csproj"
+COPY ["desafio.feiras.api/desafio.feiras.api.csproj", "desafio.feiras.api/"]
+RUN dotnet restore "desafio.feiras.api/desafio.feiras.api.csproj"
 COPY . .
-WORKDIR "/src/inmetrics.desafio.lancamento.api"
-RUN dotnet build "inmetrics.desafio.lancamento.api.csproj" -c Release -o /app/build
+WORKDIR "/src/desafio.feiras.api"
+RUN dotnet build "desafio.feiras.api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "inmetrics.desafio.lancamento.api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "desafio.feiras.api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "inmetrics.desafio.lancamento.api.dll"]
+ENTRYPOINT ["dotnet", "desafio.feiras.api.dll"]

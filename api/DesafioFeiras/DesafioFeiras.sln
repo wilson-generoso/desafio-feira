@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "desafio.feiras.infrastructu
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{570D960B-D1A2-4EBA-82CB-40AF4274C42F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{35F77913-9E0D-4DFB-99D1-97C25C297EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desafio.feiras.application.tests", "..\tests\desafio.feiras.application.tests\desafio.feiras.application.tests.csproj", "{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +49,16 @@ Global
 		{570D960B-D1A2-4EBA-82CB-40AF4274C42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570D960B-D1A2-4EBA-82CB-40AF4274C42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570D960B-D1A2-4EBA-82CB-40AF4274C42F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0} = {35F77913-9E0D-4DFB-99D1-97C25C297EF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C84FB787-3841-4609-840E-41BA58B22763}

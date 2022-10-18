@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   immongo:
-    container_name: desafioinmetricsdb
+    container_name: desafiofeirasdb
     restart: always
     ports:
       - "27017:27017"
@@ -10,16 +10,16 @@ services:
       - ${WEBAPP_STORAGE_HOME}/site:/data/db
 
   inmetrics.desafio.lancamento.api:
-    container_name: desafioinmetricsapi
+    container_name: desafiofeirasapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - MONGODB_SETTINGS={"DatabaseName":"Inmetrics","Host":"desafioinmetricsdb","Port":27017}
+      - MONGODB_SETTINGS={"DatabaseName":"Desafio","Host":"desafiofeirasdb","Port":27017}
     depends_on:
       - immongo
     ports:
-      - "8090:80"
-      - "8091:443"
+      - "8000:80"
+      - "8001:443"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

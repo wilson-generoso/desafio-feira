@@ -5,7 +5,7 @@ services:
     image: mongo
   
   inmetrics.desafio.lancamento.api:
-    image: ${DOCKER_REGISTRY-}inmetricsdesafiolancamentoapi
+    image: ${DOCKER_REGISTRY-}desafiofeirasapi
     build:
       context: .
-      dockerfile: inmetrics.desafio.lancamento.api/Dockerfile
+      dockerfile: desafio.feiras.api/Dockerfile

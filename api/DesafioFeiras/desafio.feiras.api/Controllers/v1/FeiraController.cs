@@ -1,5 +1,7 @@
 ﻿using desafio.feiras.api.Model;
 using desafio.feiras.application.Command.AddNewFeira;
+using desafio.feiras.application.Command.UpdateFeira;
+using desafio.feiras.application.Query.SearchFeiras;
 using Microsoft.AspNetCore.Mvc;
 
 namespace desafio.feiras.api.Controllers.v1
@@ -16,49 +18,40 @@ namespace desafio.feiras.api.Controllers.v1
         public FeiraController()
         {
         }
-
+        
         /// <summary>
-        /// Obtem conta por ID (Identificador gerado automaticamente)
+        /// Pesquisa por feiras cadastradas
         /// </summary>
-        /// <param name="id">Identificador da conta</param>
-        /// <returns>Informações da conta pesquisada</returns>
+        /// <param name="distrito">Nome do distrito municipal</param>
+        /// <param name="regiao5">Região conforme divisão do Município em 5 áreas</param>
+        /// <param name="nome_feira">Nome da feira livre</param>
+        /// <param name="bairro">Bairro de localização da feira livre</param>
+        /// <returns>Lista de contas cadastradas</returns>
         /// <response code="200">Executou a operação com sucesso</response>
         /// <response code="204">Executou a operação com sucesso, porém não encontrou resultados</response>
         /// <response code="500">Ocorreu um erro inesperado durante a execução da operação</response>
-        //[HttpGet("{id}")]
-        //[ProducesResponseType(200, Type = typeof(GetAccountsResponse))]
-        //[ProducesResponseType(204)]
-        //[ProducesResponseType(500, Type = typeof(ErrorResponse))]
-        //public async Task<IActionResult> GetAccounts(Guid? id)
-        //{
-        //    var response = await Mediator.Send(new GetAccountsRequest { Id = id });
+        /// <response code="400">Houveram falhas de negócio durante o processamento da operação</response>
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(SearchFeiraResponse))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(500, Type = typeof(ErrorResponse))]
+        [SwaggerNotRequiredParameters("distrito", "regiao5", "nome_feira", "bairro")]
+        public async Task<IActionResult> SearchForFeiras(string distrito, string regiao5, string nome_feira, string bairro)
+        {
+            var response = await Mediator.Send(new SearchFeirasRequest
+            {
+                Bairro = bairro,
+                DistritoMunicipal = distrito,
+                Nome = nome_feira,
+                RegiaoMunicipio5Areas = regiao5
+            });
 
-        //    if (response.Accounts?.Any() ?? false)
-        //        return Ok(response.Accounts);
-        //    else
-        //        return NoContent();
-        //}
-
-        ///// <summary>
-        ///// Obtem todas as contas cadastradas
-        ///// </summary>
-        ///// <returns>Lista de contas cadastradas</returns>
-        ///// <response code="200">Executou a operação com sucesso</response>
-        ///// <response code="204">Executou a operação com sucesso, porém não encontrou resultados</response>
-        ///// <response code="500">Ocorreu um erro inesperado durante a execução da operação</response>
-        //[HttpGet]
-        //[ProducesResponseType(200, Type = typeof(GetAccountsResponse))]
-        //[ProducesResponseType(204)]
-        //[ProducesResponseType(500, Type = typeof(ErrorResponse))]
-        //public async Task<IActionResult> GetAccounts()
-        //{
-        //    var response = await Mediator.Send(new GetAccountsRequest());
-
-        //    if (response.Accounts?.Any() ?? false)
-        //        return Ok(response.Accounts);
-        //    else
-        //        return NoContent();
-        //}
+            if (response?.Feiras?.Any() ?? false)
+                return Ok(response.Feiras);
+            else
+                return NoContent();
+        }
 
         /// <summary>
         /// Cria uma nova feira
@@ -72,27 +65,27 @@ namespace desafio.feiras.api.Controllers.v1
         [ProducesResponseType(200, Type = typeof(AddNewFeiraResponse))]
         [ProducesResponseType(400, Type = typeof(ErrorResponse))]
         [ProducesResponseType(500, Type = typeof(ErrorResponse))]
-        public async Task<IActionResult> CreateAccount([FromBody] AddNewFeiraRequest request)
+        public async Task<IActionResult> CreateFeira([FromBody] AddNewFeiraRequest request)
         {
             return Ok(await Mediator.Send(request));
         }
 
         /// <summary>
-        /// Atualiza dados de conta
+        /// Atualiza dados de feira
         /// </summary>
-        /// <param name="request">Dados da conta a serem atualizados</param>
+        /// <param name="request">Dados da feira a serem atualizados</param>
         /// <response code="200">Executou a operação com sucesso</response>
         /// <response code="400">Houveram falhas de negócio durante o processamento da operação</response>
         /// <response code="500">Ocorreu um erro inesperado durante a execução da operação</response>
-        //[HttpPut]
-        //[ProducesResponseType(200)]
-        //[ProducesResponseType(400, Type = typeof(ErrorResponse))]
-        //[ProducesResponseType(500, Type = typeof(ErrorResponse))]
-        //public async Task<IActionResult> UpdateAccount([FromBody] UpdateAccountRequest request)
-        //{
-        //    await Mediator.Send(request);
+        [HttpPut]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(500, Type = typeof(ErrorResponse))]
+        public async Task<IActionResult> UpdateFeira([FromBody] UpdateFeiraRequest request)
+        {
+            await Mediator.Send(request);
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
     }
 }
