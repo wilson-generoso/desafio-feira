@@ -57,7 +57,7 @@ namespace desafio.feiras.infrastructure.mongodb.Feira
                 query = query.Where(f => f.Nome.Contains(nome));
 
             if(!string.IsNullOrEmpty(bairro))
-                query = query.Where(f => f.Nome.Contains(bairro));
+                query = query.Where(f => f.Bairro.Contains(bairro));
 
             var documents = await query.ToListAsync();
 

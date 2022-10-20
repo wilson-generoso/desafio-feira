@@ -1,5 +1,6 @@
 ﻿using desafio.feiras.api.Model;
 using desafio.feiras.application.Command.AddNewFeira;
+using desafio.feiras.application.Command.RemoveFeira;
 using desafio.feiras.application.Command.UpdateFeira;
 using desafio.feiras.application.Query.SearchFeiras;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace desafio.feiras.api.Controllers.v1
         /// <response code="500">Ocorreu um erro inesperado durante a execução da operação</response>
         /// <response code="400">Houveram falhas de negócio durante o processamento da operação</response>
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(SearchFeiraResponse))]
+        [ProducesResponseType(200, Type = typeof(SearchFeirasResponse))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400, Type = typeof(ErrorResponse))]
         [ProducesResponseType(500, Type = typeof(ErrorResponse))]
@@ -65,7 +66,7 @@ namespace desafio.feiras.api.Controllers.v1
         [ProducesResponseType(200, Type = typeof(AddNewFeiraResponse))]
         [ProducesResponseType(400, Type = typeof(ErrorResponse))]
         [ProducesResponseType(500, Type = typeof(ErrorResponse))]
-        public async Task<IActionResult> CreateFeira([FromBody] AddNewFeiraRequest request)
+        public async Task<IActionResult> CreateFeira([FromBody]AddNewFeiraRequest request)
         {
             return Ok(await Mediator.Send(request));
         }
@@ -84,6 +85,24 @@ namespace desafio.feiras.api.Controllers.v1
         public async Task<IActionResult> UpdateFeira([FromBody] UpdateFeiraRequest request)
         {
             await Mediator.Send(request);
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Remove dados de uma feira
+        /// </summary>
+        /// <param name="identificador">Identificador da feira</param>
+        /// <response code="200">Executou a operação com sucesso</response>
+        /// <response code="400">Houveram falhas de negócio durante o processamento da operação</response>
+        /// <response code="500">Ocorreu um erro inesperado durante a execução da operação</response>
+        [HttpDelete("{identificador}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(500, Type = typeof(ErrorResponse))]
+        public async Task<IActionResult> RemoveFeira([FromRoute]int identificador)
+        {
+            await Mediator.Send(new RemoveFeiraRequest { Identificador = identificador });
 
             return Ok();
         }

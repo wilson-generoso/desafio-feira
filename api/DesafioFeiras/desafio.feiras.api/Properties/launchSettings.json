@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "inmetrics.desafio.lancamento.api": {
+    "desafio.feiras.api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

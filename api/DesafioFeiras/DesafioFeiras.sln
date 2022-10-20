@@ -17,7 +17,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{35F77913-9E0D-4DFB-99D1-97C25C297EF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desafio.feiras.application.tests", "..\tests\desafio.feiras.application.tests\desafio.feiras.application.tests.csproj", "{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "desafio.feiras.application.tests", "desafio.feiras.application.tests\desafio.feiras.application.tests.csproj", "{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{A690292D-8CD0-45E8-97C2-A5CCF6705FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desafio.feiras.infrastructure.tests", "desafio.feiras.infrastructure.tests\desafio.feiras.infrastructure.tests.csproj", "{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,12 +57,22 @@ Global
 		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{9677CCB8-928E-4FC9-B1C6-2A6403FA6BDA} = {A690292D-8CD0-45E8-97C2-A5CCF6705FCF}
+		{63526D0A-26B2-4947-8F98-3BC97C5CF23A} = {A690292D-8CD0-45E8-97C2-A5CCF6705FCF}
+		{88CD0468-6B4F-4744-8E93-06A7833EAD10} = {A690292D-8CD0-45E8-97C2-A5CCF6705FCF}
+		{4221644C-5574-44CE-AAE6-1750AD24C76F} = {A690292D-8CD0-45E8-97C2-A5CCF6705FCF}
+		{61FEEC44-CEB4-421F-BB7A-2E850A4FF2DB} = {A690292D-8CD0-45E8-97C2-A5CCF6705FCF}
 		{983D2124-C3CF-4DF7-8B0C-63AEC49A07A0} = {35F77913-9E0D-4DFB-99D1-97C25C297EF8}
+		{8F0B5F3B-33FD-4A2A-8598-7393D15DA0E7} = {35F77913-9E0D-4DFB-99D1-97C25C297EF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C84FB787-3841-4609-840E-41BA58B22763}

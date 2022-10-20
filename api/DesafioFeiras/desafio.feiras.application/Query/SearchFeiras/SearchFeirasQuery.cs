@@ -44,6 +44,8 @@ namespace desafio.feiras.application.Query.SearchFeiras
                 if (feiras.Any())
                     response.Feiras = feiras.Select(f => mapper.Map<SearchFeiraResponse>(f)).ToList();
 
+                logger.LogInformation($"Foram encontradas {response.Feiras.Count()} feiras");
+
                 return response;
             }
         }

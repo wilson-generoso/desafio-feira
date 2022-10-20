@@ -51,9 +51,6 @@ namespace desafio.feiras.application.tests.Commands
             result.ShouldHaveValidationErrorFor(x => x.Nome).WithErrorMessage("Informe o nome da feira livre atribuída pela Supervisão de Abastecimento");
             result.ShouldHaveValidationErrorFor(x => x.Registro).WithErrorMessage("Informe o número do registro da feira livre na PMSP");
             result.ShouldHaveValidationErrorFor(x => x.Logradouro).WithErrorMessage("Informe o nome do logradouro onde se localiza a feira livre");
-            result.ShouldHaveValidationErrorFor(x => x.NumeroLogradouro).WithErrorMessage("Informe um número do logradouro onde se localiza a feira livre");
-            result.ShouldHaveValidationErrorFor(x => x.Bairro).WithErrorMessage("Informe o bairro de localização da feira livre");
-            result.ShouldHaveValidationErrorFor(x => x.PontoReferencia).WithErrorMessage("Informe o ponto de referência da localização da feira livre");
         }
 
         [Fact(DisplayName = "Valida tamanho do dado na requisicao de cadastro de nova feira")]

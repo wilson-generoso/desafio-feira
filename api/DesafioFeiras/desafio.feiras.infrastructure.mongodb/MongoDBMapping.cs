@@ -8,13 +8,9 @@ namespace desafio.feiras.infrastructure.mongodb
     {
         public MongoDBMapping()
         {
-            CreateMap<domain.BaseEntity, BaseDocument>()
-                .ForMember(doc => doc.Id, entity => entity.MapFrom(x => x.Identificador));
-
-            CreateMap<BaseDocument, domain.BaseEntity>()
-                .ForMember(entity => entity.Identificador, doc => doc.MapFrom(x => x.Id));
-
-            CreateMap<domain.Feira, FeiraDocument>().ReverseMap();
+            CreateMap<domain.Feira, FeiraDocument>()
+                .ForMember(doc => doc.Id, entity => entity.MapFrom(x => x.Identificador))
+                .ReverseMap();
         }
     }
 }

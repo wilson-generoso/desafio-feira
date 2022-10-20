@@ -71,11 +71,11 @@ namespace desafio.feiras.infrastructure.mongodb.Repository
         {
             var counters = database.GetCollection<SequenceCounterDocument>("Counters");
 
-            var counter = await counters.FindAsync(x => x.Key == key);
+            var list = await counters.Find(x => x.Key == key).ToListAsync();
 
-            if (counter.Any())
+            if (list.Any())
             {
-                return (await counter.FirstAsync()).Sequence;
+                return list.First().Sequence;
             }
             else
             {

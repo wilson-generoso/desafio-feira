@@ -88,12 +88,14 @@ namespace desafio.feiras.application.Command.UpdateFeira
                 .MaximumLength(34).WithMessage("O nome do logradouro deve possuir no máximo 34 caracteres");
 
             RuleFor(a => a.NumeroLogradouro)
-                .Must(x => !string.IsNullOrEmpty(x)).WithMessage("Informe um número do logradouro onde se localiza a feira livre")
-                .MaximumLength(5).WithMessage("O número do logradouro deve possuir no máximo 5 caracteres");
+                .MaximumLength(5)
+                .When(x => !string.IsNullOrEmpty(x.NumeroLogradouro))
+                .WithMessage("O número do logradouro deve possuir no máximo 5 caracteres");
 
             RuleFor(a => a.Bairro)
-                .Must(x => !string.IsNullOrEmpty(x)).WithMessage("Informe o bairro de localização da feira livre")
-                .MaximumLength(20).WithMessage("O bairro deve possuir no máximo 20 caracteres");
+                .MaximumLength(20)
+                .When(x => !string.IsNullOrEmpty(x.Bairro))
+                .WithMessage("O bairro deve possuir no máximo 20 caracteres");
 
             RuleFor(a => a.PontoReferencia)
                 .Must(x => !string.IsNullOrEmpty(x)).WithMessage("Informe o ponto de referência da localização da feira livre")

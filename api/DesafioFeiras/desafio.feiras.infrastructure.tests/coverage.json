@@ -1,0 +1,488 @@
+{
+  "desafio.feiras.domain.dll": {
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.domain\\BaseEntity.cs": {
+      "desafio.feiras.domain.BaseEntity": {
+        "System.Int32 desafio.feiras.domain.BaseEntity::get_Identificador()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.domain\\Feira.cs": {
+      "desafio.feiras.domain.Feira": {
+        "System.String desafio.feiras.domain.Feira::get_Longitude()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Latitude()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_SetorCensitario()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_AreaPonderacao()": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_CodigoDistritoIBGE()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_DistritoMunicipal()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_CodigoSubprefeitura()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Subprefeitura()": {
+          "Lines": {
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_RegiaoMunicipio5Areas()": {
+          "Lines": {
+            "43": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_RegiaoMunicipio8Areas()": {
+          "Lines": {
+            "47": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Nome()": {
+          "Lines": {
+            "51": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Registro()": {
+          "Lines": {
+            "55": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Logradouro()": {
+          "Lines": {
+            "59": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_NumeroLogradouro()": {
+          "Lines": {
+            "63": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_Bairro()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.domain.Feira::get_PontoReferencia()": {
+          "Lines": {
+            "71": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "desafio.feiras.infrastructure.dll": {
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLogger.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLogger": {
+        "System.IDisposable desafio.feiras.infrastructure.Log.DesafioLogger::BeginScope(TState)": {
+          "Lines": {
+            "18": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean desafio.feiras.infrastructure.Log.DesafioLogger::IsEnabled(Microsoft.Extensions.Logging.LogLevel)": {
+          "Lines": {
+            "20": 4
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLogger::Log(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,TState,System.Exception,System.Func`3<TState,System.Exception,System.String>)": {
+          "Lines": {
+            "23": 4,
+            "24": 4,
+            "25": 4,
+            "26": 4,
+            "27": 4,
+            "28": 4,
+            "29": 4,
+            "30": 4,
+            "31": 4,
+            "32": 4,
+            "34": 4,
+            "35": 4,
+            "36": 4
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 24,
+              "Offset": 10,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLogger::.ctor(System.String,Microsoft.Extensions.Logging.LogLevel,desafio.feiras.infrastructure.Log.IDesafioLoggerWriter)": {
+          "Lines": {
+            "11": 2,
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerJsonWriter.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerJsonWriter": {
+        "System.String[] desafio.feiras.infrastructure.Log.DesafioLoggerJsonWriter::FormatLog(desafio.feiras.infrastructure.Log.DesafioLogStructure)": {
+          "Lines": {
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerJsonWriter::.ctor(desafio.feiras.infrastructure.Log.DesafioLoggerSettings,desafio.feiras.infrastructure.Log.IDesafioFileWriter)": {
+          "Lines": {
+            "7": 1,
+            "8": 1,
+            "9": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerProvider.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerProvider": {
+        "Microsoft.Extensions.Logging.ILogger desafio.feiras.infrastructure.Log.DesafioLoggerProvider::CreateLogger(System.String)": {
+          "Lines": {
+            "25": 4
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerProvider::Dispose()": {
+          "Lines": {
+            "28": 2,
+            "29": 2,
+            "30": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerProvider::.ctor(desafio.feiras.infrastructure.Log.DesafioLoggerSettings,desafio.feiras.infrastructure.Log.IDesafioFileWriter)": {
+          "Lines": {
+            "16": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerSettings.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerSettings": {
+        "Microsoft.Extensions.Logging.EventId desafio.feiras.infrastructure.Log.DesafioLoggerSettings::get_EventId()": {
+          "Lines": {
+            "7": 4
+          },
+          "Branches": []
+        },
+        "Microsoft.Extensions.Logging.LogLevel desafio.feiras.infrastructure.Log.DesafioLoggerSettings::get_Level()": {
+          "Lines": {
+            "8": 6
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLoggerSettings::get_Application()": {
+          "Lines": {
+            "9": 8
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLoggerSettings::get_FilePattern()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "desafio.feiras.infrastructure.Log.LogFormat desafio.feiras.infrastructure.Log.DesafioLoggerSettings::get_Format()": {
+          "Lines": {
+            "11": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerTextWriter.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerTextWriter": {
+        "System.String[] desafio.feiras.infrastructure.Log.DesafioLoggerTextWriter::FormatLog(desafio.feiras.infrastructure.Log.DesafioLogStructure)": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerTextWriter::.ctor(desafio.feiras.infrastructure.Log.DesafioLoggerSettings,desafio.feiras.infrastructure.Log.IDesafioFileWriter)": {
+          "Lines": {
+            "11": 1,
+            "12": 1,
+            "13": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerWriter.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerWriterBase": {
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterBase::Write(desafio.feiras.infrastructure.Log.DesafioLogStructure)": {
+          "Lines": {
+            "43": 4,
+            "44": 4,
+            "46": 4,
+            "47": 4
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLoggerWriterBase::GenerateFilename()": {
+          "Lines": {
+            "52": 4,
+            "53": 4,
+            "55": 4,
+            "56": 8,
+            "57": 8,
+            "58": 8,
+            "59": 8,
+            "60": 4,
+            "61": 8,
+            "62": 4,
+            "63": 4,
+            "64": 4,
+            "65": 4,
+            "66": 4,
+            "67": 4,
+            "68": 12,
+            "69": 4
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 42,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8
+            },
+            {
+              "Line": 61,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 61,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 8
+            },
+            {
+              "Line": 61,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 61,
+              "Offset": 89,
+              "EndOffset": 136,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4
+            },
+            {
+              "Line": 67,
+              "Offset": 137,
+              "EndOffset": 139,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 137,
+              "EndOffset": 142,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 4
+            },
+            {
+              "Line": 67,
+              "Offset": 149,
+              "EndOffset": 151,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 149,
+              "EndOffset": 157,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterBase::.ctor(desafio.feiras.infrastructure.Log.DesafioLoggerSettings,desafio.feiras.infrastructure.Log.IDesafioFileWriter)": {
+          "Lines": {
+            "24": 2,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterBase::.cctor()": {
+          "Lines": {
+            "18": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLoggerWriterFactory.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLoggerWriterFactory": {
+        "desafio.feiras.infrastructure.Log.IDesafioLoggerWriter desafio.feiras.infrastructure.Log.DesafioLoggerWriterFactory::Factory()": {
+          "Lines": {
+            "24": 2,
+            "25": 2,
+            "26": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterFactory::Inicialize()": {
+          "Lines": {
+            "29": 2,
+            "30": 3,
+            "31": 3,
+            "32": 2
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterFactory::AddWriter(desafio.feiras.infrastructure.Log.LogFormat,System.Func`1<desafio.feiras.infrastructure.Log.IDesafioLoggerWriter>)": {
+          "Lines": {
+            "35": 4,
+            "36": 4,
+            "37": 4
+          },
+          "Branches": []
+        },
+        "System.Void desafio.feiras.infrastructure.Log.DesafioLoggerWriterFactory::.ctor(desafio.feiras.infrastructure.Log.DesafioLoggerSettings,desafio.feiras.infrastructure.Log.IDesafioFileWriter)": {
+          "Lines": {
+            "11": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "20": 2,
+            "21": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\wilso\\source\\repos\\Testes\\desafio-feira\\api\\DesafioFeiras\\desafio.feiras.infrastructure\\Log\\DesafioLogStructure.cs": {
+      "desafio.feiras.infrastructure.Log.DesafioLogStructure": {
+        "Microsoft.Extensions.Logging.LogLevel desafio.feiras.infrastructure.Log.DesafioLogStructure::get_Level()": {
+          "Lines": {
+            "12": 6
+          },
+          "Branches": []
+        },
+        "Microsoft.Extensions.Logging.EventId desafio.feiras.infrastructure.Log.DesafioLogStructure::get_Id()": {
+          "Lines": {
+            "13": 8
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLogStructure::get_Category()": {
+          "Lines": {
+            "14": 8
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLogStructure::get_Scope()": {
+          "Lines": {
+            "15": 4
+          },
+          "Branches": []
+        },
+        "System.String desafio.feiras.infrastructure.Log.DesafioLogStructure::get_Message()": {
+          "Lines": {
+            "16": 8
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
